@@ -1,8 +1,13 @@
 import os
 import csv
+from collections.abc import Sequence
 
 
-def append_csv_row(filepath: str, headers: list[str], row: list) -> None:
+def append_csv_row(
+        filepath: str,
+        headers: list[str],
+        row: Sequence[object]
+        ) -> None:
     folder = os.path.dirname(filepath)
     if folder:
         os.makedirs(folder, exist_ok=True)
